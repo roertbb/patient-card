@@ -7,12 +7,12 @@ import {
   IconButton,
   CircularProgress
 } from '@material-ui/core';
-import ItemList from '../components/List';
 import { observer } from 'mobx-react-lite';
 import { RootStoreContext } from '../store/RootStore';
 import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
 import Pagination from '../components/Pagination';
+import ItemList from '../components/List';
 import LoadingContainer from '../components/LoadingContainer';
 
 const StyledBox = styled(Box)`

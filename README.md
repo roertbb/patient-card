@@ -12,13 +12,13 @@
 
 #### patient details
 
-[ ] all details - everything
+[x] all details - everything
 
-[ ] visualization period
+[x] visualization period
 
-[ ] resources: Patient, Observation, (MedicationStatement, Medication)/MedicationRequest
+[x] resources: Patient, Observation, (MedicationStatement, Medication)/MedicationRequest
 
-[ ] 2 levels of presentation - basic and details (double click)
+[x] 2 levels of presentation - basic and details (double click)
 
 #### plots for resources such as weight, temperature
 
