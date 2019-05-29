@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import {
   List,
   ListItem,
@@ -27,7 +28,7 @@ const LoadingOverlay = styled.div`
   align-items: center;
 `;
 
-function ItemList({ items, loading }) {
+function ItemList({ items, loading, history }) {
   return (
     <>
       <StyledPaper>
@@ -49,7 +50,7 @@ function ItemList({ items, loading }) {
                   <ListItem
                     button
                     key={item.fullUrl}
-                    onClick={() => console.log(item.fullUrl)}
+                    onClick={() => history.push(`/Patient/${item.resource.id}`)}
                   >
                     <ListItemText
                       primary={`${officialName.given} ${officialName.family}`}
@@ -69,4 +70,4 @@ function ItemList({ items, loading }) {
   );
 }
 
-export default ItemList;
+export default withRouter(ItemList);

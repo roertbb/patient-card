@@ -13,6 +13,7 @@ import { RootStoreContext } from '../store/RootStore';
 import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
 import Pagination from '../components/Pagination';
+import LoadingContainer from '../components/LoadingContainer';
 
 const StyledBox = styled(Box)`
   display: flex;
@@ -26,15 +27,6 @@ const StyledPaper = styled(Paper)`
   display: flex;
   align-items: center;
   padding-left: 10px;
-`;
-
-const CircularContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 function PatientList(props) {
@@ -77,9 +69,9 @@ function PatientList(props) {
           {patients.length ? (
             <ItemList items={patients} loading />
           ) : (
-            <CircularContainer>
+            <LoadingContainer>
               <CircularProgress />
-            </CircularContainer>
+            </LoadingContainer>
           )}
         </>
       ) : (

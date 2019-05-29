@@ -5,6 +5,7 @@ import PatientList from './pages/PatientList';
 import { StylesProvider } from '@material-ui/styles';
 import Nav from './components/Nav';
 import { observer } from 'mobx-react-lite';
+import PatientDetails from './pages/PatientDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Container maxWidth="md">
               <Switch>
                 <Route exact path="/" component={PatientList} />
+                <Route path="/Patient/:id" component={PatientDetails} />
                 <Route component={PatientList} />
               </Switch>
             </Container>

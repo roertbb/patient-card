@@ -16,7 +16,7 @@
 
 [ ] visualization period
 
-[ ] resources: Patient, Observation, MedicationStatement, Medication
+[ ] resources: Patient, Observation, (MedicationStatement, Medication)/MedicationRequest
 
 [ ] 2 levels of presentation - basic and details (double click)
 
