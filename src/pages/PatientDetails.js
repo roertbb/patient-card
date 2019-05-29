@@ -11,6 +11,7 @@ import {
 import PatientData from '../components/PatientData';
 import PatientResources from '../components/PatientResources';
 import styled from 'styled-components';
+import PatientCharts from '../components/PatientCharts';
 
 const FilterForm = styled.div`
   display: flex;
@@ -131,6 +132,7 @@ function PatientDetails({ history }) {
         </FilterForm>
       </Box>
       <PatientResources resources={filterResourcesWithinTimestamp()} />
+      <PatientCharts resources={filterResourcesWithinTimestamp()} />
     </>
   );
 }

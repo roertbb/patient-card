@@ -12,6 +12,7 @@ function PatientResources({ resources }) {
   return (
     <Box mb={3}>
       {resources.map(res => {
+        // retrieve informations
         const type = res.resource.resourceType;
         const date = (res.resource.issued || res.resource.authoredOn).split(
           'T'
@@ -43,8 +44,12 @@ function PatientResources({ resources }) {
           res.resource.medicationCodeableConcept &&
           res.resource.medicationCodeableConcept.text;
 
-        const title = nestedTitle || singleTitle || medicationTitle;
-        const content = nestedDesc || singleDesc || medicationTitle;
+        const remaining = res.resource.code && res.resource.code.text;
+
+        const title =
+          nestedTitle || singleTitle || medicationTitle || remaining;
+        const content =
+          nestedDesc || singleDesc || medicationTitle || remaining;
 
         return (
           <ExpansionPanel key={res.fullUrl}>
