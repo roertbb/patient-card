@@ -39,12 +39,13 @@ function PatientCharts({ resources }) {
 
   return (
     <>
-      {Object.keys(bodyWeight).length && (
+      {Object.keys(bodyWeight).length !== 0 && (
         <Box m={2} mr={4}>
           <Box m={2} mb={3}>
             <Typography variant="h5">Patient Weight</Typography>
           </Box>
           <LineChart
+            curve={false}
             data={bodyWeight}
             min={Math.floor(Math.min(...Object.values(bodyWeight)) * 0.9)}
             max={Math.ceil(Math.max(...Object.values(bodyWeight)) * 1.1)}
@@ -52,12 +53,13 @@ function PatientCharts({ resources }) {
         </Box>
       )}
 
-      {Object.keys(Systolic).length && (
+      {Object.keys(Systolic).length !== 0 && (
         <Box m={2} mr={4}>
           <Box m={2} mb={3}>
             <Typography variant="h5">Patient Blood Pressure</Typography>
           </Box>
           <LineChart
+            curve={false}
             data={[
               { name: 'Systolic', data: Systolic },
               { name: 'Diastolic', data: Diastolic }
